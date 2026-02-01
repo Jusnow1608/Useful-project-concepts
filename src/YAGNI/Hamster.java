@@ -27,23 +27,8 @@ private Hamster findHamsterByPhone(int hamsterPhoneNumber){
         hamstersHouse.add(findHamsterByPhone(hamster.hamsterPhoneNumber));
     }
 
-    public void AddHamsterByName(Hamster hamster)
-    {
-        hamstersHouse.add(findHamsterByPhone(hamster.hamsterPhoneNumber));
-    }
-
     public void removeHamsterWithSpecificPhoneNumber(Hamster hamster)    {
         hamstersHouse.remove(findHamsterByPhone(hamster.hamsterPhoneNumber));
-    }
-    // Funkcja "na zapas" - żywienie nie jest częścią obecnego systemu
-    public void FeedHamster(Hamster hamster, String breed)
-    {
-        System.out.println("Hamster " + hamster.hamsterName + " feeded using " + breed);
-    }
-    // Funkcja "na zapas" - transport nie był wymagany
-    public void TransportHamster(Hamster hamster, String direction)
-    {
-        System.out.println("Hamster " + hamster.hamsterName + " transported to " + direction);
     }
 
     public String getHamsterName() {
