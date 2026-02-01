@@ -5,13 +5,11 @@ public class NumberCalculator {
     public int number2;
     public int result;
 
-    public NumberCalculator()
+    public static int divideNumbers(int number1, int number2)
     {
-        result = divideNumbers(number1,number2);
-    }
-
-    public int divideNumbers(int number1, int number2)
-    {
+        if (number2 == 0) {
+            return 0;
+        }
         return number1 / number2;
     }
 
