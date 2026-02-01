@@ -18,23 +18,18 @@ public class Hamster {
     public Hamster() {
     }
 
-    public void addHamsterWithSpecificPhoneNumber(Hamster hamster)
-    {
-        Hamster found = hamstersWorld.stream()
-                .filter(n -> n.getHamsterPhoneNumber() == hamster.getHamsterPhoneNumber())
-                .findFirst().get();
+private Hamster findHamsterByPhone(int hamsterPhoneNumber){
+    return hamstersWorld.stream()
+            .filter(hamster -> hamster.getHamsterPhoneNumber() == hamsterPhoneNumber)
+            .findFirst().orElseThrow(() -> new RuntimeException("Chomik nie istnieje!"));
 
-        hamstersHouse.add(found);
+}
+    public void addHamsterWithSpecificPhoneNumber(Hamster hamster)    {
+        hamstersHouse.add(findHamsterByPhone(hamster.hamsterPhoneNumber));
     }
 
-    public void removeHamsterWithSpecificPhoneNumber(Hamster hamster)
-    {
-        //duplikacja linii kodu, które szukają chomika o specyficznym numerze telefonu
-        Hamster found = hamstersWorld.stream()
-                .filter(n -> n.getHamsterPhoneNumber() == hamster.getHamsterPhoneNumber())
-                .findFirst().get();
-
-        hamstersHouse.remove(found);
+    public void removeHamsterWithSpecificPhoneNumber(Hamster hamster)    {
+        hamstersHouse.remove(findHamsterByPhone(hamster.hamsterPhoneNumber));
     }
 
     public String getHamsterName() {
