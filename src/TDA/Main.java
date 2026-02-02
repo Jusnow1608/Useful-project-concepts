@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         PaymentService paymentService = new PaymentService();
 
-        System.out.println("--- PRÓBA PŁATNOŚCI (Wersja przed TDA) ---");
+        System.out.println("--- SYSTEM PŁATNOŚCI TDA ---");
 
         try {
             // Serwis musi znać ID klienta i kwotę, a potem sam "walczyć" z obiektem konta

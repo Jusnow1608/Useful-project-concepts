@@ -1,15 +1,30 @@
 package TDA;
 
 public class PaymentAccount {
-        public int customerID;
-        public int totalBalance;
+        private int customerID;
+        private int totalBalance;
 
     public PaymentAccount(int customerID, int totalBalance) {
         this.customerID = customerID;
         this.totalBalance = totalBalance;
     }
 
-    public PaymentAccount() {
+    public void standardCharge(int amount)
+    {
+        if (this.totalBalance < amount)
+        {
+            throw new RuntimeException("Not enough funds.");
+        }
+        this.totalBalance -= amount;
+    }
+
+    public void premiumCharge(int amount)
+    {
+        if (this.totalBalance < amount)
+        {
+            throw new RuntimeException("Not enough funds.");
+        }
+        this.totalBalance += amount;
     }
 
       public int getCustomerID() {
